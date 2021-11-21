@@ -6,16 +6,25 @@
 /*   By: hgrissen <hgrissen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 11:16:00 by hgrissen          #+#    #+#             */
-/*   Updated: 2021/11/20 21:42:17 by hgrissen         ###   ########.fr       */
+/*   Updated: 2021/11/21 01:17:46 by hgrissen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Phonebook.hpp"
 
+bool	is_Number(const std::string& s)
+{
+	for (size_t i = 0; i < s.length(); i++)
+	{
+		if (!std::isdigit(s[i]) && s[i] != '+')
+			return (false);
+	}
+	return (true);
+}
 
 void    Print_Contacts(Phonebook *_Phonebook)
 {
-	std::string first, last, nick, desired_index;
+	std::string first, last, nick, phone, darkest, desired_index;
 	unsigned long index;
 
 	std::cout << std::setw(10);
@@ -60,28 +69,38 @@ void    Print_Contacts(Phonebook *_Phonebook)
 	}
 	std::cout << "ENTER DESIRED CONTACT INDEX : ";
 	getline(std::cin, desired_index);
-	if (desired_index.length() > 0)
+	if (!std::cin)
+	{
+		std::cout << std::endl << "BAD entery" << std::endl;
+		exit(0) ;
+	}
+	if (is_Number(desired_index))
 	{
 		index = std::stoul(desired_index);
 		if (index > _Phonebook->Get_Cur_Index() || _Phonebook->Get_Cur_Index() <= 0)
 			std::cout << "Not A Valid Index" << std::endl;
 		else
 		{
-			first   = _Phonebook->Get_Contact(index - 1)->Get_First();
-			last    = _Phonebook->Get_Contact(index - 1)->Get_Last();
-			nick    = _Phonebook->Get_Contact(index - 1)->Get_Nick();
-			std::cout << std::setw(10);
-			std::cout << std::to_string(index) << "|";
-			std::cout << std::setw(10);
-			std::cout << first << "|";
-			std::cout << std::setw(10);
-			std::cout << last  << "|";
-			std::cout << std::setw(10);
-			std::cout << nick  << "|";
+			first	= _Phonebook->Get_Contact(index - 1)->Get_First();
+			last	= _Phonebook->Get_Contact(index - 1)->Get_Last();
+			nick	= _Phonebook->Get_Contact(index - 1)->Get_Nick();
+			phone	= _Phonebook->Get_Contact(index - 1)->Get_Number();
+			darkest	= _Phonebook->Get_Contact(index - 1)->Get_Darkest();
+
 			std::cout << std::endl;
+			std::cout << "      CONTACT      "	<< std::to_string(index) << std::endl;
+			std::cout << std::endl;
+			std::cout << "Firstname         : " << first	<< std::endl;
+			std::cout << "LastName          : "	<< last		<< std::endl;
+			std::cout << "NickName          : "	<< nick		<< std::endl;
+			std::cout << "PhoneNumber       : "	<< phone	<< std::endl;
+			std::cout << "Darkest Secret    : "	<< darkest	<< std::endl;
+			std::cout << std::endl;
+
 		}
 	}
-		
+	else
+		std::cout << "Not A Valid Index" << std::endl;
 }
 
 int main()
@@ -92,6 +111,11 @@ int main()
 	{
 		 std::cout << "ENTER YOUR COMMAND! : ";
 		getline(std::cin, _command);
+		if (!std::cin)
+		{
+			std::cout << std::endl << "BAD entery" << std::endl;
+			exit(0) ;
+		}
 		if (_command == EXIT)
 		{
 			std::cout << "bye bye !!" << std::endl;

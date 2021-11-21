@@ -6,7 +6,7 @@
 /*   By: hgrissen <hgrissen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 11:12:02 by hgrissen          #+#    #+#             */
-/*   Updated: 2021/11/20 21:48:33 by hgrissen         ###   ########.fr       */
+/*   Updated: 2021/11/21 01:10:06 by hgrissen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ Phonebook::Phonebook(void)
 {
 	this->_Cur_index = 0;
 	this->_old_index = 0;
-	return;
 }
 
 void	Phonebook::Add()
@@ -100,20 +99,58 @@ void	Phonebook::Add()
 		else
 			this->Set_Old_Index(j);
 	}
+	
 	std::cout << "first name : ";
 	getline(std::cin, val);
+	if (!std::cin)
+	{
+		std::cout << std::endl << "BAD entery" << std::endl;
+		exit(0) ;
+	}
 	this->Get_Contact(i)->Set_First(val);
+	
 	std::cout << "last name : ";
 	getline(std::cin, val);
+	if (!std::cin)
+	{
+		std::cout << std::endl << "BAD entery" << std::endl;
+		exit(0) ;
+	}
 	this->Get_Contact(i)->Set_Last(val);
+	
 	std::cout << "nickname : ";
 	getline(std::cin, val);
+	if (!std::cin)
+	{
+		std::cout << std::endl << "BAD entery" << std::endl;
+		exit(0) ;
+	}
 	this->Get_Contact(i)->Set_Nick(val);
-	std::cout << "phone number : ";
-	getline(std::cin, val);
+	
+	while (1)
+	{
+		std::cout << "phone number : ";
+		getline(std::cin, val);
+		if (!std::cin)
+		{
+			std::cout << std::endl << "BAD entery" << std::endl;
+			exit(0) ;
+		}
+		if (is_Number(val))
+			break ;
+		else
+			std::cout << "please enter a valid phone number!!" << std::endl;
+		
+	}
 	this->Get_Contact(i)->Set_Number(val);
+
 	std::cout << "darkest secret : ";
 	getline(std::cin, val);
+	if (!std::cin)
+	{
+		std::cout << std::endl << "BAD entery" << std::endl;
+		exit(0) ;
+	}
 	this->Get_Contact(i)->Set_Darkest(val);
 
 	i++;
