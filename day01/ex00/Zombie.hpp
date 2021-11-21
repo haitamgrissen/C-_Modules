@@ -6,7 +6,7 @@
 /*   By: hgrissen <hgrissen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 01:32:59 by hgrissen          #+#    #+#             */
-/*   Updated: 2021/11/21 02:06:08 by hgrissen         ###   ########.fr       */
+/*   Updated: 2021/11/21 02:13:47 by hgrissen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Zombie
     public:
         Zombie(std::string name);
         ~Zombie();
-        std::string Get_name();
         void announce(void);
 };
 

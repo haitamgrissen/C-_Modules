@@ -6,7 +6,7 @@
 /*   By: hgrissen <hgrissen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 01:33:04 by hgrissen          #+#    #+#             */
-/*   Updated: 2021/11/21 02:11:32 by hgrissen         ###   ########.fr       */
+/*   Updated: 2021/11/21 02:21:17 by hgrissen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int main()
 
     heap = newZombie("anass");
     heap->announce();
-    delete(heap);
-    randomChump("Nizar");
 
     Zombie  stack("sousou");
     stack.announce();
-    
+    randomChump("Nizar");
+
+    delete(heap);
 
     return (0);
 }

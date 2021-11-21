@@ -6,7 +6,7 @@
 /*   By: hgrissen <hgrissen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 01:32:56 by hgrissen          #+#    #+#             */
-/*   Updated: 2021/11/21 02:07:49 by hgrissen         ###   ########.fr       */
+/*   Updated: 2021/11/21 02:13:52 by hgrissen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,4 @@ Zombie::~Zombie()
 void    Zombie::announce( void )
 {
     std::cout << this->_name << "    BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-std::string Zombie::Get_name()
-{
-    return (this->_name);
 }
