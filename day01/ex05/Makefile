@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hgrissen <hgrissen@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/21 21:30:55 by hgrissen          #+#    #+#              #
-#    Updated: 2021/11/23 14:55:11 by hgrissen         ###   ########.fr        #
+#    Created: 2021/11/23 16:59:45 by hgrissen          #+#    #+#              #
+#    Updated: 2021/11/23 20:20:18 by hgrissen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = replace
+NAME = Karen
 
-SRC = main.cpp 
+SRC = main.cpp Karen.cpp
 
 CC = clang++  -std=c++98
 
