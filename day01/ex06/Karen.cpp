@@ -6,7 +6,7 @@
 /*   By: hgrissen <hgrissen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:00:18 by hgrissen          #+#    #+#             */
-/*   Updated: 2021/11/23 21:28:21 by hgrissen         ###   ########.fr       */
+/*   Updated: 2021/11/23 21:57:01 by hgrissen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,22 +49,13 @@ void    Karen::complainFilter(std::string level)
     {
         case (0) :
                 (this->*funcs[0])();
-                (this->*funcs[1])();
-                (this->*funcs[2])();
-                (this->*funcs[3])();
-            break;
         case (1) :
                 (this->*funcs[1])();
-                (this->*funcs[2])();
-                (this->*funcs[3])();
-            break;
         case (2) :
                 (this->*funcs[2])();
-                (this->*funcs[3])();
-            break;
         case (3) :
                 (this->*funcs[3])();
-                break;
+            break;
         default:
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
             break;
