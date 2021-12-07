@@ -6,25 +6,25 @@
 /*   By: hgrissen <hgrissen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 01:11:46 by hgrissen          #+#    #+#             */
-/*   Updated: 2021/12/07 09:45:05 by hgrissen         ###   ########.fr       */
+/*   Updated: 2021/12/07 09:59:14 by hgrissen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 
 int main()
 {
-    ScavTrap a("one");
+    FragTrap a("fraggy");
 
 
     std::cout << std::endl;
 
     
-    ClapTrap b("two");
-
+    ClapTrap b("clappy");
 
 
 
@@ -40,7 +40,7 @@ int main()
     b.attack(a.getName());
     std::cout << std::endl;
 
-    a.guardGate();
+    a.highFivesGuys();
     
     std::cout << std::endl;
 }

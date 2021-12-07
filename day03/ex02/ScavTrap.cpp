@@ -6,7 +6,7 @@
 /*   By: hgrissen <hgrissen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 02:31:28 by hgrissen          #+#    #+#             */
-/*   Updated: 2021/12/07 09:44:55 by hgrissen         ###   ########.fr       */
+/*   Updated: 2021/12/07 09:39:46 by hgrissen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
             ScavTrap::ScavTrap(std::string name): ClapTrap(name)
             {
                 std::cout << this->name << " ScavTrap" << std::endl;
-                this->hp = 100;
-                this->ep = 50;
-                this->ad = 20;
+                this->hp = 10;
+                this->ep = 10;
+                this->ad = 0;
             }
 
             ScavTrap::ScavTrap(ScavTrap const & scavtrap)
